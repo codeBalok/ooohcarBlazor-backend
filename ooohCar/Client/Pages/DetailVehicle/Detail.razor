@@ -1,0 +1,798 @@
+﻿@page "/detail"
+
+
+
+<ooohCar_Blazor_Client.Shared.HomePages.TopHeader />
+<ooohCar_Blazor_Client.Shared.HomePages.MainHeader />
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-12 col-xs-12">
+            <div class="car-details-section">
+                <!-- Heading start -->
+                <div class="heading-car clearfix">
+                    <div class="pull-left">
+                        <h3>Porsche Cayen Last</h3>
+                        <h6>
+                            <i class="flaticon-pin"></i>123 Kathal St. Tampa City,
+                        </h6>
+                    </div>
+                    <div class="pull-right">
+                        <div class="price-box-3"><sup>$</sup>650<span>/month</span></div>
+                    </div>
+                </div>
+                <!-- carDetailsSlider start -->
+                <div id="carDetailsSlider" class="carousel car-details-sliders slide slide-2">
+                    <!-- main slider carousel items -->
+                    <div class="carousel-inner">
+                        <div class="active item carousel-item" data-slide-number="0">
+                            <img src="http://placehold.it/730x486" class="img-fluid" alt="slider-car">
+                        </div>
+                        <div class="item carousel-item" data-slide-number="1">
+                            <img src="http://placehold.it/730x486" class="img-fluid" alt="slider-car">
+                        </div>
+                        <div class="item carousel-item" data-slide-number="2">
+                            <img src="http://placehold.it/730x486" class="img-fluid" alt="slider-car">
+                        </div>
+                        <div class="item carousel-item" data-slide-number="4">
+                            <img src="http://placehold.it/730x486" class="img-fluid" alt="slider-car">
+                        </div>
+                        <div class="item carousel-item" data-slide-number="5">
+                            <img src="http://placehold.it/730x486" class="img-fluid" alt="slider-car">
+                        </div>
+                    </div>
+                    <!-- main slider carousel nav controls -->
+                    <ul class="carousel-indicators car-properties list-inline nav nav-justified">
+                        <li class="list-inline-item active">
+                            <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#carDetailsSlider">
+                                <img src="http://placehold.it/80x53" class="img-fluid" alt="small-car">
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a id="carousel-selector-1" data-slide-to="1" data-target="#carDetailsSlider">
+                                <img src="http://placehold.it/80x53" class="img-fluid" alt="small-car">
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a id="carousel-selector-2" data-slide-to="2" data-target="#carDetailsSlider">
+                                <img src="http://placehold.it/80x53" class="img-fluid" alt="small-car">
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a id="carousel-selector-3" data-slide-to="3" data-target="#carDetailsSlider">
+                                <img src="http://placehold.it/80x53" class="img-fluid" alt="small-car">
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a id="carousel-selector-4" data-slide-to="4" data-target="#carDetailsSlider">
+                                <img src="http://placehold.it/80x53" class="img-fluid" alt="small-car">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Advanced search start -->
+                <div class="widget-2 advanced-search bg-grea-2 as-2">
+                    <h3 class="sidebar-title">Refine Your Search</h3>
+                    <div class="s-border"></div>
+                    <div class="m-border"></div>
+                    <ul>
+                        <li>
+                            <span>Make</span>Ferrari
+                        </li>
+                        <li>
+                            <span>Model</span>Maxima
+                        </li>
+                        <li>
+                            <span>Body Style</span>Convertible
+                        </li>
+                        <li>
+                            <span>Year</span>2017
+                        </li>
+                        <li>
+                            <span>Condition</span>Brand New
+                        </li>
+                        <li>
+                            <span>Mileage</span>34,000 mi
+                        </li>
+                        <li>
+                            <span>Interior Color</span>Dark Grey
+                        </li>
+                        <li>
+                            <span>Transmission</span>6-speed Manual
+                        </li>
+                        <li>
+                            <span>Engine</span>3.4L Mid-Engine V6
+                        </li>
+                        <li>
+                            <span>No. of Gears:</span>5
+                        </li>
+                        <li>
+                            <span>Location</span>Toronto
+                        </li>
+                        <li>
+                            <span>Fuel Type</span>Gasoline Fuel
+                        </li>
+                    </ul>
+                </div>
+                <!-- Tabbing box start -->
+                <div class="tabbing tabbing-box mb-40">
+                    <ul class="nav nav-tabs" id="carTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active show" id="one-tab" data-toggle="tab" href="#one" role="tab" aria-controls="one" aria-selected="false">Description</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="two-tab" data-toggle="tab" href="#two" role="tab" aria-controls="two" aria-selected="false">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="6-tab" data-toggle="tab" href="#6" role="tab" aria-controls="6" aria-selected="true">Specifications</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="three-tab" data-toggle="tab" href="#three" role="tab" aria-controls="three" aria-selected="true">Related Car</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="5-tab" data-toggle="tab" href="#5" role="tab" aria-controls="5" aria-selected="true">Location</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="4-tab" data-toggle="tab" href="#4" role="tab" aria-controls="4" aria-selected="true">Video</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="carTabContent">
+                        <div class="tab-pane fade active show" id="one" role="tabpanel" aria-labelledby="one-tab">
+                            <div class="car-description mb-50">
+                                <h3 class="heading-2">
+                                    Description
+                                </h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla. Nulla posuere sapien vitae lectus suscipit, et pulvinar nisi tincidunt. Aliquam erat volutpat. Curabitur convallis fringilla diam sed aliquam. Sed tempor iaculis massa faucibus feugiat. In fermentum facilisis massa, a consequat purus viverra a. Aliquam pellentesque nibh et nibh feugiat gravida. Maecenas ultricies, diam vitae semper placerat, velit risus accumsan nisl, eget tempor lacus est vel nunc. Proin accumsan elit sed neque euismod fringilla. Curabitur lobortis nunc velit, et fermentum urna dapibus non. Vivamus magna lorem, elementum id gravida ac, laoreet tristique augue. Maecenas dictum lacus eu nunc porttitor, ut hendrerit arcu efficitur.</p>
+                                <p>Aliquam ultricies nunc porta metus interdum mollis. Donec porttitor libero augue, vehicula tincidunt lectus placerat a. Sed tincidunt dolor non sem dictum dignissim. Nulla vulputate orci felis, ac ornare purus ultricies a. Fusce euismod magna orci, sit amet aliquam turpis dignissim ac. In at tortor at ligula pharetra sollicitudin. Sed tincidunt, purus eget laoreet elementum, felis est pharetra ante, tincidunt feugiat libero enim sed risus. Sed at leo sit amet mi bibendum aliquam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent cursus varius odio, non faucibus dui. Nunc vehicula lectus sed velit suscipit aliquam vitae eu ipsum. adipiscing elit.</p>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="two" role="tabpanel" aria-labelledby="two-tab">
+                            <div class="features-info mb-50">
+                                <h3 class="heading-2">Features</h3>
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                        <ul>
+                                            <li>
+                                                Adaptive Cruise Control
+                                            </li>
+                                            <li>
+                                                Airbags
+                                            </li>
+                                            <li>
+                                                Air Conditioning
+                                            </li>
+                                            <li>
+                                                Alarm System
+                                            </li>
+                                            <li>
+                                                Anti-theft Protection
+                                            </li>
+                                            <li>
+                                                Audio Interface
+                                            </li>
+                                            <li>
+                                                Automatic Climate Control
+                                            </li>
+                                            <li>
+                                                Automatic Headlights
+                                            </li>
+                                            <li>
+                                                Auto Start/Stop
+                                            </li>
+                                            <li>
+                                                Bi-Xenon Headlights
+                                            </li>
+                                            <li>
+                                                Audio Interface
+                                            </li>
+                                            <li>
+                                                Bluetooth Handset
+                                            </li>
+                                            <li>
+                                                BOSE Surround Sound
+                                            </li>
+                                            <li>
+                                                Burmester Surround Sound
+                                            </li>
+                                            <li>
+                                                CD/DVD Autochanger
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                        <ul>
+                                            <li>
+                                                CDR Audio
+                                            </li>
+                                            <li>
+                                                Cruise Control
+                                            </li>
+                                            <li>
+                                                Direct Fuel Injection
+                                            </li>
+                                            <li>
+                                                Electric Parking Brake
+                                            </li>
+                                            <li>
+                                                Floor Mats
+                                            </li>
+                                            <li>
+                                                Garage Door Opener
+                                            </li>
+                                            <li>
+                                                Leather Package
+                                            </li>
+                                            <li>
+                                                Locking Rear Differential
+                                            </li>
+                                            <li>
+                                                Luggage Compartments
+                                            </li>
+                                            <li>
+                                                Manual Transmission
+                                            </li>
+                                            <li>
+                                                Navigation Module
+                                            </li>
+                                            <li>
+                                                Online Services
+                                            </li>
+                                            <li>
+                                                ParkAssist
+                                            </li>
+                                            <li>
+                                                Porsche Communication
+                                            </li>
+                                            <li>
+                                                CD/DVD Autochanger
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                        <ul>
+                                            <li>
+                                                Power Steering
+                                            </li>
+                                            <li>
+                                                Reversing Camera
+                                            </li>
+                                            <li>
+                                                Roll-over Protection
+                                            </li>
+                                            <li>
+                                                Seat Heating
+                                            </li>
+                                            <li>
+                                                Seat Ventilation
+                                            </li>
+                                            <li>
+                                                Sound Package Plus
+                                            </li>
+                                            <li>
+                                                Sport Chrono Package
+                                            </li>
+                                            <li>
+                                                Steering Wheel Heating
+                                            </li>
+                                            <li>
+                                                Tire Pressure Monitoring
+                                            </li>
+                                            <li>
+                                                Universal Audio Interface
+                                            </li>
+                                            <li>
+                                                Voice Control System
+                                            </li>
+                                            <li>
+                                                Wind Deflector
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade " id="three" role="tabpanel" aria-labelledby="three-tab">
+                            <div class="related-car mb-40">
+                                <h3 class="heading-2">Related Car</h3>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="car-box-3">
+                                            <div class="car-thumbnail">
+                                                <a href="car-details.html" class="car-img">
+                                                    <div class="for">For Sale</div>
+                                                    <div class="price-box">
+                                                        <span class="del"><del>$950.00</del></span>
+                                                        <br>
+                                                        <span>$1050.00</span>
+                                                    </div>
+                                                    <img class="d-block w-100" src="http://placehold.it/350x250" alt="car">
+                                                </a>
+                                                <div class="carbox-overlap-wrapper">
+                                                    <div class="overlap-box">
+                                                        <div class="overlap-btns-area">
+                                                            <a class="overlap-btn" data-toggle="modal" data-target="#carOverviewModal">
+                                                                <i class="fa fa-eye-slash"></i>
+                                                            </a>
+                                                            <a class="overlap-btn wishlist-btn">
+                                                                <i class="fa fa-heart-o"></i>
+                                                            </a>
+                                                            <a class="overlap-btn compare-btn">
+                                                                <i class="fa fa-balance-scale"></i>
+                                                            </a>
+                                                            <div class="car-magnify-gallery">
+                                                                <a href="http://placehold.it/750x500" class="overlap-btn" data-sub-html="<h4>Lamborghini</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
+                                                                    <i class="fa fa-expand"></i>
+                                                                    <img class="hidden" src="http://placehold.it/80x58" alt="hidden-img">
+                                                                </a>
+                                                                <a href="http://placehold.it/750x500" class="hidden" data-sub-html="<h4>Ferrari Red Car</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
+                                                                    <img class="hidden" src="http://placehold.it/80x58" alt="hidden-img">
+                                                                </a>
+                                                                <a href="http://placehold.it/750x500" class="hidden" data-sub-html="<h4>Bmw e46 m3 Diski Serie</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
+                                                                    <img class="hidden" src="http://placehold.it/80x58" alt="hidden-img">
+                                                                </a>
+                                                                <a href="http://placehold.it/750x500" class="hidden" data-sub-html="<h4>Volkswagen Scirocco 2016</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
+                                                                    <img class="hidden" src="http://placehold.it/80x58" alt="hidden-img">
+                                                                </a>
+                                                                <a href="http://placehold.it/750x500" class="hidden" data-sub-html="<h4>Porsche Cayen Last</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
+                                                                    <img class="hidden" src="http://placehold.it/80x58" alt="hidden-img">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="detail">
+                                                <h1 class="title">
+                                                    <a href="car-details.html">Lamborghini</a>
+                                                </h1>
+                                                <ul class="custom-list">
+                                                    <li>
+                                                        <a href="#">New Car</a> /
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Automatic</a> /
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Sports</a>
+                                                    </li>
+                                                </ul>
+                                                <ul class="facilities-list clearfix">
+                                                    <li>
+                                                        <i class="flaticon-fuel"></i> Petrol
+                                                    </li>
+                                                    <li>
+                                                        <i class="flaticon-way"></i> 4,000 km
+                                                    </li>
+                                                    <li>
+                                                        <i class="flaticon-manual-transmission"></i> Manual
+                                                    </li>
+                                                    <li>
+                                                        <i class="flaticon-car"></i> Sport
+                                                    </li>
+                                                    <li>
+                                                        <i class="flaticon-gear"></i> Blue
+                                                    </li>
+                                                    <li>
+                                                        <i class="flaticon-calendar-1"></i> 2019
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="footer clearfix">
+                                                <div class="pull-left ratings">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                    <span>(65 Reviews)</span>
+                                                </div>
+                                                <ul class="pull-right icon">
+                                                    <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-share-square-o"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="car-box-3">
+                                            <div class="car-thumbnail">
+                                                <a href="car-details.html" class="car-img">
+                                                    <div class="tag-2 bg-active">Featured</div>
+                                                    <div class="price-box">
+                                                        <span class="del"><del>$805.00</del></span>
+                                                        <br>
+                                                        <span>$780.00</span>
+                                                    </div>
+                                                    <img class="d-block w-100" src="http://placehold.it/350x250" alt="car">
+                                                </a>
+                                                <div class="carbox-overlap-wrapper">
+                                                    <div class="overlap-box">
+                                                        <div class="overlap-btns-area">
+                                                            <a class="overlap-btn" data-toggle="modal" data-target="#carOverviewModal">
+                                                                <i class="fa fa-eye-slash"></i>
+                                                            </a>
+                                                            <a class="overlap-btn wishlist-btn">
+                                                                <i class="fa fa-heart-o"></i>
+                                                            </a>
+                                                            <a class="overlap-btn compare-btn">
+                                                                <i class="fa fa-balance-scale"></i>
+                                                            </a>
+                                                            <div class="car-magnify-gallery">
+                                                                <a href="http://placehold.it/750x500" class="overlap-btn" data-sub-html="<h4>Ferrari Red Car</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
+                                                                    <i class="fa fa-expand"></i>
+                                                                    <img class="hidden" src="http://placehold.it/80x58" alt="hidden-img">
+                                                                </a>
+                                                                <a href="http://placehold.it/750x500" class="hidden" data-sub-html="<h4>Ferrari Red Car</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
+                                                                    <img class="hidden" src="http://placehold.it/80x58" alt="hidden-img">
+                                                                </a>
+                                                                <a href="http://placehold.it/750x500" class="hidden" data-sub-html="<h4>Bmw e46 m3 Diski Serie</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
+                                                                    <img class="hidden" src="http://placehold.it/80x58" alt="hidden-img">
+                                                                </a>
+                                                                <a href="http://placehold.it/750x500" class="hidden" data-sub-html="<h4>Volkswagen Scirocco 2016</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
+                                                                    <img class="hidden" src="http://placehold.it/80x58" alt="hidden-img">
+                                                                </a>
+                                                                <a href="http://placehold.it/750x500" class="hidden" data-sub-html="<h4>Porsche Cayen Last</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
+                                                                    <img class="hidden" src="http://placehold.it/80x58" alt="hidden-img">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="detail">
+                                                <h1 class="title">
+                                                    <a href="car-details.html">Ferrari Red Car</a>
+                                                </h1>
+                                                <ul class="custom-list">
+                                                    <li>
+                                                        <a href="#">New Car</a> /
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Automatic</a> /
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Sports</a>
+                                                    </li>
+                                                </ul>
+                                                <ul class="facilities-list clearfix">
+                                                    <li>
+                                                        <i class="flaticon-fuel"></i> Petrol
+                                                    </li>
+                                                    <li>
+                                                        <i class="flaticon-way"></i> 4,000 km
+                                                    </li>
+                                                    <li>
+                                                        <i class="flaticon-manual-transmission"></i> Manual
+                                                    </li>
+                                                    <li>
+                                                        <i class="flaticon-car"></i> Sport
+                                                    </li>
+                                                    <li>
+                                                        <i class="flaticon-gear"></i> Blue
+                                                    </li>
+                                                    <li>
+                                                        <i class="flaticon-calendar-1"></i> 2019
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="footer clearfix">
+                                                <div class="pull-left ratings">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                    <span>(65 Reviews)</span>
+                                                </div>
+                                                <ul class="pull-right icon">
+                                                    <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-share-square-o"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade " id="6" role="tabpanel" aria-labelledby="6-tab">
+                            <div class="car-amenities mb-30">
+                                <h3 class="heading-2">Specifications</h3>
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                        <ul class="amenities">
+                                            <li>
+                                                <i class="fa fa-check"></i>Top Speed: 270
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-check"></i>Fuel Type: Diesel
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-check"></i>Mileage: 35,200 KM
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-check"></i>Engine: 2901
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-check"></i>Gear: 4
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                        <ul class="amenities">
+                                            <li>
+                                                <i class="fa fa-check"></i>Drive Train: Front Wheel
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-check"></i>Body Style: Sedan
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-check"></i>Year:2019
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-check"></i>Fuel Type: Diesel
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-check"></i>Interior Color: White
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                        <ul class="amenities">
+                                            <li>
+                                                <i class="fa fa-check"></i>Doors: 4
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-check"></i>Horse Power: 310
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-check"></i>Location: Florisa, USA
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-check"></i>Interior Color: Black
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-check"></i>Security
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade " id="5" role="tabpanel" aria-labelledby="5-tab">
+                            <div class="location mb-50">
+                                <div class="map">
+                                    <h3 class="heading-2">Location</h3>
+                                    <div id="map" class="contact-map" style="height: 175px; position: relative; overflow: hidden;"><div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);"><div style="overflow: hidden;"></div><div class="gm-style" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px;"><div tabindex="0" aria-label="Map" aria-roledescription="map" role="group" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; cursor: url(&quot;https://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default; touch-action: pan-x pan-y;"><div style="z-index: 1; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 985; transform: matrix(1, 0, 0, 1, -90, -90);"><div style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: -1;"><div style="position: absolute; z-index: 985; transform: matrix(1, 0, 0, 1, -90, -90);"><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: 0px;"></div></div></div><div style="width: 27px; height: 43px; overflow: hidden; position: absolute; left: -14px; top: -43px; z-index: 0;"><img alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2.png" draggable="false" style="position: absolute; left: 0px; top: 0px; width: 27px; height: 43px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"></div></div><div class="gm-style-pbc" style="z-index: 2; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; opacity: 0;"><p class="gm-style-pbt"></p></div><div style="z-index: 3; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; touch-action: pan-x pan-y;"><div style="z-index: 4; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"><div role="button" tabindex="0" style="width: 27px; height: 43px; overflow: hidden; position: absolute; left: -14px; top: -43px; z-index: 0;"><img alt="" src="https://maps.gstatic.com/mapfiles/transparent.png" draggable="false" usemap="#gmimap0" style="width: 27px; height: 43px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"><map name="gmimap0" id="gmimap0"><area log="miw" coords="13.5,0,4,3.75,0,13.5,13.5,43,27,13.5,23,3.75" shape="poly" tabindex="-1" title="" style="cursor: pointer; touch-action: none;"></map></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"></div></div></div></div><iframe aria-hidden="true" frameborder="0" tabindex="-1" style="z-index: -1; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; border: none;"></iframe><div style="pointer-events: none; width: 100%; height: 100%; box-sizing: border-box; position: absolute; z-index: 1000002; opacity: 0; border: 2px solid rgb(26, 115, 232);"></div></div></div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade " id="4" role="tabpanel" aria-labelledby="4-tab">
+                            <div class="inside-car mb-50">
+                                <h3 class="heading-2">
+                                    Video
+                                </h3>
+                                <iframe src="https://www.youtube.com/embed/5e0LxrLSzok" allowfullscreen=""></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Heading 2 -->
+                <h3 class="heading-2">Comments Section</h3>
+                <!-- Comments start -->
+                <ul class="comments">
+                    <li>
+                        <div class="comment">
+                            <div class="comment-author">
+                                <a href="#">
+                                    <img src="http://placehold.it/60x60" alt="comments-user">
+                                </a>
+                            </div>
+                            <div class="comment-content">
+                                <div class="comment-meta">
+                                    <h6>
+                                        Maikel Alisa
+                                        <span class="float-right">11/28/2019<a href="#">Reply</a></span>
+                                    </h6>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus tincidunt aliquam. Aliquam gravida massa at sem vulputate interdum et vel eros. Maecenas eros enim  sem vulputate interdum et vel eros.</p>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="comment">
+                                    <div class="comment-author">
+                                        <a href="#">
+                                            <img src="http://placehold.it/60x60" alt="comments-user">
+                                        </a>
+                                    </div>
+                                    <div class="comment-content">
+                                        <div class="comment-meta">
+                                            <h6>
+                                                Carolyn Stone
+                                                <span class="float-right">11/28/2019<a href="#">Reply</a></span>
+                                            </h6>
+                                        </div>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus tincidunt aliquam. Aliquam gravida massa at sem vulputate interdum et.</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="comment">
+                            <div class="comment-author">
+                                <a href="#">
+                                    <img src="http://placehold.it/60x60" alt="comments-user">
+                                </a>
+                            </div>
+                            <div class="comment-content">
+                                <div class="comment-meta">
+                                    <h6>
+                                        Brandon Miller
+                                        <span class="float-right">11/28/2019<a href="#">Reply</a></span>
+                                    </h6>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus tincidunt aliquam. Aliquam gravida massa at sem vulputate interdum et vel eros. Maecenas eros enim.</p>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="comment mb-50">
+                                    <div class="comment-author">
+                                        <a href="#">
+                                            <img src="http://placehold.it/60x60" alt="comments-user">
+                                        </a>
+                                    </div>
+                                    <div class="comment-content b-none">
+                                        <div class="comment-meta">
+                                            <h6>
+                                                Michelle Nelson
+                                                <span class="float-right">11/28/2019<a href="#">Reply</a></span>
+                                            </h6>
+                                        </div>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus tincidunt aliquam. Aliquam gravida massa at sem vulputate interdum et vel eros. Maecenas eros enim.</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- Contact 2 start -->
+                <div class="contact-2 ca mb-50">
+                    <h3 class="heading-2">Contact Form</h3>
+                    <form action="#" method="GET" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="form-group name col-md-6">
+                                <input type="text" name="name" class="form-control" placeholder="Name">
+                            </div>
+                            <div class="form-group email col-md-6">
+                                <input type="email" name="email" class="form-control" placeholder="Email">
+                            </div>
+                            <div class="form-group number col-md-6">
+                                <input type="text" name="phone" class="form-control" placeholder="Number">
+                            </div>
+                            <div class="form-group number col-md-6">
+                                <input type="text" name="subject" class="form-control" placeholder="Subject">
+                            </div>
+                            <div class="form-group message col-md-12">
+                                <textarea class="form-control" name="message" placeholder="Write message"></textarea>
+                            </div>
+                            <div class="send-btn col-md-12">
+                                <button type="submit" class="btn btn-md button-theme">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-12">
+            <div class="sidebar-right">
+                <!-- Advanced search start -->
+                <div class="widget advanced-search d-none-992">
+                    <h3 class="sidebar-title">Refine Your Search</h3>
+                    <div class="s-border"></div>
+                    <div class="m-border"></div>
+                    <ul>
+                        <li>
+                            <span>Make</span>Ferrari
+                        </li>
+                        <li>
+                            <span>Model</span>Maxima
+                        </li>
+                        <li>
+                            <span>Body Style</span>Convertible
+                        </li>
+                        <li>
+                            <span>Year</span>2017
+                        </li>
+                        <li>
+                            <span>Condition</span>Brand New
+                        </li>
+                        <li>
+                            <span>Mileage</span>34,000 mi
+                        </li>
+                        <li>
+                            <span>Interior Color</span>Dark Grey
+                        </li>
+                        <li>
+                            <span>Transmission</span>6-speed Manual
+                        </li>
+                        <li>
+                            <span>Engine</span>3.4L Mid-Engine V6
+                        </li>
+                        <li>
+                            <span>No. of Gears:</span>5
+                        </li>
+                        <li>
+                            <span>Location</span>Toronto
+                        </li>
+                        <li>
+                            <span>Fuel Type</span>Gasoline Fuel
+                        </li>
+                    </ul>
+                </div>
+                <!-- Question start -->
+                <div class="widget question">
+                    <h5 class="sidebar-title">Get a Question?</h5>
+                    <div class="s-border"></div>
+                    <div class="m-border"></div>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="flaticon-pin"></i>20/F Green Road, Dhanmondi
+                        </li>
+                        <li>
+                            <i class="flaticon-mail"></i><a href="mailto:info@themevessel.com">info@themevessel.com</a>
+                        </li>
+                        <li>
+                            <i class="flaticon-phone"></i><a href="tel:+0477-85x6-552">+0477 85x6 552</a>
+                        </li>
+                    </ul>
+                    <div class="social-list clearfix">
+                        <ul>
+                            <li><a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" class="google-bg"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#" class="rss-bg"><i class="fa fa-rss"></i></a></li>
+                            <li><a href="#" class="linkedin-bg"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Financing calculator start -->
+                <div class="contact-2 financing-calculator widget widget-3">
+                    <h3 class="sidebar-title">Financing Calculator</h3>
+                    <div class="s-border"></div>
+                    <div class="m-border"></div>
+                    <form action="#" method="GET" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label class="form-label">Price</label>
+                            <input type="text" class="form-control" placeholder="$24.400">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Interest Rate (%)</label>
+                            <input type="text" class="form-control" placeholder="12%">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Period In Months</label>
+                            <input type="text" class="form-control" placeholder="6 Months">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Down PaymenT</label>
+                            <input type="text" class="form-control" placeholder="$32,300">
+                        </div>
+
+                        <div class="form-group mb-0">
+                            <button type="submit" class="btn button-theme btn-md btn-block">Cauculate</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+<ooohCar_Blazor_Client.Shared.HomePages.FooterOverview />
+@code {
+
+
+}

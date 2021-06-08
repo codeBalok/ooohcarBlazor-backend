@@ -1,0 +1,665 @@
+﻿
+
+@page "/addusedvehicle"
+
+@using MatBlazor
+<head>
+    <style>
+        ._1X3Cw:active, ._2GMt3 {
+            background: linear-gradient( 261deg,rgba(246,155,0,.18824),rgba(237,106,0,.18824)) !important;
+            border: 1px solid #f07b00 !important;
+        }
+
+        ._3kV4n {
+            margin-right: 20px;
+        }
+
+        ._1X3Cw {
+            margin-top: 16px;
+            padding: 20px 59px;
+            border-radius: 5px;
+            border: 1px solid #dde5eb;
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        .text-center {
+            text-align: center !important;
+        }
+
+        ._1jMfy {
+            width: 72px;
+        }
+
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+        }
+
+        img {
+            vertical-align: middle;
+            border-style: none;
+        }
+
+
+        .stepwizard-step p {
+            margin-top: 0px;
+            color: #666;
+        }
+
+        /* .stepwizard-row {
+            display: table-row;
+        }*/
+
+        .stepwizard {
+            display: table;
+            width: 100%;
+            position: relative;
+            top: 10px;
+        }
+
+        .stepwizard-step button[disabled] {
+            /*opacity: 1 !important;
+        filter: alpha(opacity=100) !important;*/
+        }
+
+        .stepwizard .btn.disabled, .stepwizard .btn[disabled], .stepwizard fieldset[disabled] .btn {
+            opacity: 1 !important;
+            color: #bbb;
+        }
+
+        .stepwizard-row:before {
+            top: 14px;
+            bottom: 0;
+            position: absolute;
+            content: " ";
+            width: 100%;
+            height: 1px;
+            background-color: #ccc;
+            z-index: 0;
+        }
+
+        .stepwizard-step {
+            display: table-cell;
+            text-align: center;
+            position: relative;
+        }
+
+        .btn-circle {
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            padding: 6px 0;
+            font-size: 12px;
+            line-height: 1.428571429;
+            border-radius: 15px;
+        }
+
+        .step-none-class {
+            display: none;
+        }
+
+        .step-block-class {
+            display: block;
+        }
+
+        .nextBtn {
+            margin-right: 84px;
+            margin-top: 16px;
+        }
+
+        .mdc-select {
+            min-width: 50%;
+            margin-top: 20px;
+        }
+
+        .mdc-text-field--filled {
+            width: 50%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<ooohCar_Blazor_Client.Shared.HomePages.TopHeader />
+<ooohCar_Blazor_Client.Shared.HomePages.MainHeader />
+<div class="contact-2 content-area-5">
+    <div class="container">
+
+        <h2>Add Car Details</h2>
+
+        <ooohCar_Blazor_Client.Components.Wizard>
+            <ooohCar_Blazor_Client.Components.WizardStep Name="Select Make">
+
+                <div class="panel-heading">
+                    <h3 class="panel-title"> Select Your Car Make</h3>
+                </div>
+                <div class="panel-body">
+                    <ul class="row C7tbs">
+                        @foreach (var carlist in carImageList)
+                        {
+                            <li class="_3kV4n" @onclick="@(e => ClickCarImage(@carlist.Id))">
+                                <div class="text-center _1X3Cw @carlist.ActiveImage"><img data-title="@carlist.Name" src="@carlist.ImagePath" alt="Maruti Suzuki" class="img-fluid _1jMfy" /></div>
+                            </li>
+                        }
+
+                    </ul>
+                </div>
+
+            </ooohCar_Blazor_Client.Components.WizardStep>
+            <ooohCar_Blazor_Client.Components.WizardStep Name="Select Model, Varient, Color">
+
+                <div class="panel-heading">
+                    <h3 class="panel-title"> Select Your Car Model, Varient, Color</h3>
+                </div>
+                <div class="panel-body">
+
+                    <MatSelect Label="Pick a Model" @bind-Value="value1">
+                        <MatOptionString></MatOptionString>
+                        <MatOptionString Value="grains">Bread, Cereal, Rice, and Pasta</MatOptionString>
+                        <MatOptionString Value="vegetables">Vegetables</MatOptionString>
+                        <MatOptionString Value="fruit">Fruit</MatOptionString>
+                    </MatSelect>
+
+
+                    <MatSelect Label="Pick a Varient" @bind-Value="value1">
+
+                        <MatOptionString Value="grains">Bread, Cereal, Rice, and Pasta</MatOptionString>
+                        <MatOptionString Value="vegetables">Vegetables</MatOptionString>
+                        <MatOptionString Value="fruit">Fruit</MatOptionString>
+                    </MatSelect>
+
+                    <MatSelect Label="Pick a Color" @bind-Value="value1">
+
+                        <MatOptionString Value="grains">Bread, Cereal, Rice, and Pasta</MatOptionString>
+                        <MatOptionString Value="vegetables">Vegetables</MatOptionString>
+                        <MatOptionString Value="fruit">Fruit</MatOptionString>
+                    </MatSelect>
+
+                </div>
+
+            </ooohCar_Blazor_Client.Components.WizardStep>
+            <ooohCar_Blazor_Client.Components.WizardStep Name="Select Price, Year, KM Driven ">
+
+                <div class="panel-heading">
+                    <h3 class="panel-title"> Select Price, Year, KM Driven</h3>
+                </div>
+                <div class="panel-body">
+                    <MatStringField @bind-Value="@price" Label="Price"></MatStringField>
+
+
+                    <MatSelect Label="Pick a Year" @bind-Value="value1">
+                        <MatOptionString></MatOptionString>
+                        <MatOptionString Value="grains">Bread, Cereal, Rice, and Pasta</MatOptionString>
+                        <MatOptionString Value="vegetables">Vegetables</MatOptionString>
+                        <MatOptionString Value="fruit">Fruit</MatOptionString>
+                    </MatSelect>
+
+                    <MatStringField @bind-Value="@kmDriven" Label="KM Driven"></MatStringField>
+                </div>
+
+            </ooohCar_Blazor_Client.Components.WizardStep>
+            <ooohCar_Blazor_Client.Components.WizardStep Name="Select Ownership, Saller Name, Contact Detail">
+
+                <div class="panel-heading">
+                    <h3 class="panel-title"> Select Ownership, Saller Name, Contact Detail</h3>
+                </div>
+                <div class="panel-body">
+                    <MatSelect Label="Pick a Ownership" @bind-Value="value1">
+
+                        <MatOptionString Value="1">First</MatOptionString>
+                        <MatOptionString Value="2">Second</MatOptionString>
+                        <MatOptionString Value="3">Third</MatOptionString>
+                        <MatOptionString Value="4">Fourth</MatOptionString>
+                        <MatOptionString Value="5">Fifth</MatOptionString>
+                    </MatSelect>
+
+                    <MatStringField @bind-Value="@ContactType" Label="Contact Type"></MatStringField>
+                    <MatSelect Label="Pick a Contact Type" @bind-Value="value1">
+
+                        <MatOptionString Value="1">Phone</MatOptionString>
+                        <MatOptionString Value="2">Whatsapp</MatOptionString>
+                        <MatOptionString Value="3">Mail</MatOptionString>
+
+                    </MatSelect>
+                </div>
+
+            </ooohCar_Blazor_Client.Components.WizardStep>
+            <ooohCar_Blazor_Client.Components.WizardStep Name="Upload Images">
+
+                <div class="panel-heading">
+                    <h3 class="panel-title">Select Images</h3>
+                </div>
+                <div class="panel-body">
+                    <MatFileUpload OnChange="@MultipleFilesReady" AllowMultiple="true" Label="Drop files here or Browse"></MatFileUpload>
+                    @foreach (var f in multiplelist)
+                    {
+                        <div>@f</div>
+                    }
+                </div>
+
+            </ooohCar_Blazor_Client.Components.WizardStep>
+        </ooohCar_Blazor_Client.Components.Wizard>
+
+
+
+    </div>
+</div>
+
+
+
+
+<ooohCar_Blazor_Client.Shared.HomePages.FooterOverview />
+
+@code {
+    private string step1 = "step-block-class";
+    private string step2 = "step-none-class";
+    private string step3 = "step-none-class";
+    private string step4 = "step-none-class";
+    private string step5 = "step-none-class";
+    private bool stepwizard1 = false;
+    private bool stepwizard2 = true;
+    private bool stepwizard3 = true;
+    private bool stepwizard4 = true;
+    private bool stepwizard5 = true;
+    private string buttonCss1 = "btn-success";
+    private string buttonCss2 = "btn-default";
+    private string buttonCss3 = "btn-default";
+    private string buttonCss4 = "btn-default";
+    private string buttonCss5 = "btn-default";
+    string value1;
+    string price;
+    string kmDriven;
+    string SellerName;
+    string ContactType;
+    List<string> multiplelist = new List<string>();
+
+    private class CarImages
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string ActiveImage { get; set; }
+        public string ImagePath { get; set; }
+    }
+    List<CarImages> carImageList = new List<CarImages>();
+
+
+    protected override void OnInitialized()
+    {
+        CarImages objNew = new CarImages
+        {
+            Id = 1,
+            Name = "Maruti Suzuki",
+            ImagePath = "img/carimages/maruti-suzuki.png",
+            ActiveImage = "_2GMt3"
+        };
+        carImageList.Add(objNew);
+
+        objNew = new CarImages
+        {
+            Id = 2,
+            Name = "Hyundai",
+            ImagePath = "img/carimages/hyundai.png",
+            ActiveImage = ""
+        };
+        carImageList.Add(objNew);
+
+        objNew = new CarImages
+        {
+            Id = 3,
+            Name = "Honda",
+            ImagePath = "img/carimages/Honda.png",
+            ActiveImage = ""
+        };
+        carImageList.Add(objNew);
+
+        objNew = new CarImages
+        {
+            Id = 4,
+            Name = "tata",
+            ImagePath = "img/carimages/tata.png",
+            ActiveImage = ""
+        };
+        carImageList.Add(objNew);
+
+        objNew = new CarImages
+        {
+            Id = 5,
+            Name = "toyota",
+            ImagePath = "img/carimages/toyota.png",
+            ActiveImage = ""
+        };
+        carImageList.Add(objNew);
+        objNew = new CarImages
+        {
+            Id = 6,
+            Name = "chevrolet",
+            ImagePath = "img/carimages/chevrolet.png",
+            ActiveImage = ""
+        };
+        carImageList.Add(objNew);
+        objNew = new CarImages
+        {
+            Id = 7,
+            Name = "ford",
+            ImagePath = "img/carimages/ford.png",
+            ActiveImage = ""
+        };
+        carImageList.Add(objNew);
+        objNew = new CarImages
+        {
+            Id = 8,
+            Name = "mahindra",
+            ImagePath = "img/carimages/mahindra.png",
+            ActiveImage = ""
+        };
+
+        carImageList.Add(objNew);
+        objNew = new CarImages
+        {
+            Id = 9,
+            Name = "skoda",
+            ImagePath = "img/carimages/skoda.png",
+            ActiveImage = ""
+        };
+
+        carImageList.Add(objNew);
+        objNew = new CarImages
+        {
+            Id = 10,
+            Name = "volkswagen",
+            ImagePath = "img/carimages/volkswagen.png",
+            ActiveImage = ""
+        };
+
+        carImageList.Add(objNew);
+    }
+
+    private void ClickNextNew(int stepid)
+    {
+        if (stepid == 1)
+        {
+            step1 = "step-block-class";
+            step2 = "step-none-class";
+            step3 = "step-none-class";
+            step4 = "step-none-class";
+            step5 = "step-none-class";
+            stepwizard1 = false;
+            stepwizard2 = true;
+            stepwizard3 = true;
+            stepwizard4 = true;
+            stepwizard5 = true;
+            buttonCss1 = "btn-success";
+            buttonCss2 = "btn-default";
+            buttonCss3 = "btn-default";
+            buttonCss4 = "btn-default";
+            buttonCss5 = "btn-default";
+        }
+        if (stepid == 2)
+        {
+            step1 = "step-none-class";
+            step2 = "step-block-class";
+            step3 = "step-none-class";
+            step4 = "step-none-class";
+            step5 = "step-none-class";
+            stepwizard1 = true;
+            stepwizard2 = false;
+            stepwizard3 = true;
+            stepwizard4 = true;
+            stepwizard5 = true;
+            buttonCss1 = "btn-default";
+            buttonCss2 = "btn-success";
+            buttonCss3 = "btn-default";
+            buttonCss4 = "btn-default";
+            buttonCss5 = "btn-default";
+        }
+
+        if (stepid == 3)
+        {
+            step1 = "step-none-class";
+            step2 = "step-none-class";
+            step3 = "step-block-class";
+            step4 = "step-none-class";
+            step5 = "step-none-class";
+            stepwizard1 = true;
+            stepwizard2 = true;
+            stepwizard3 = false;
+            stepwizard4 = true;
+            stepwizard5 = true;
+            buttonCss1 = "btn-default";
+            buttonCss2 = "btn-default";
+            buttonCss3 = "btn-success";
+            buttonCss4 = "btn-default";
+            buttonCss5 = "btn-default";
+        }
+        if (stepid == 4)
+        {
+            step1 = "step-none-class";
+            step2 = "step-none-class";
+            step3 = "step-none-class";
+            step4 = "step-block-class";
+            step5 = "step-none-class";
+            stepwizard1 = true;
+            stepwizard2 = true;
+            stepwizard3 = true;
+            stepwizard4 = false;
+            stepwizard5 = true;
+            buttonCss1 = "btn-default";
+            buttonCss2 = "btn-default";
+            buttonCss3 = "btn-default";
+            buttonCss4 = "btn-success";
+            buttonCss5 = "btn-default";
+        }
+        if (stepid == 5)
+        {
+            step1 = "step-none-class";
+            step2 = "step-none-class";
+            step3 = "step-none-class";
+            step4 = "step-none-class";
+            step5 = "step-block-class";
+            stepwizard1 = true;
+            stepwizard2 = true;
+            stepwizard3 = true;
+            stepwizard4 = true;
+            stepwizard5 = false;
+            buttonCss1 = "btn-default";
+            buttonCss2 = "btn-default";
+            buttonCss3 = "btn-default";
+            buttonCss4 = "btn-default";
+            buttonCss5 = "btn-success";
+        }
+    }
+
+
+    private void ClickNext()
+    {
+        if (step1 == "step-block-class")
+        {
+            step1 = "step-none-class";
+            step2 = "step-block-class";
+            step3 = "step-none-class";
+            step4 = "step-none-class";
+            step5 = "step-none-class";
+            stepwizard1 = true;
+            stepwizard2 = false;
+            stepwizard3 = true;
+            stepwizard4 = true;
+            stepwizard5 = true;
+            buttonCss1 = "btn-default";
+            buttonCss2 = "btn-success";
+            buttonCss3 = "btn-default";
+            buttonCss4 = "btn-default";
+            buttonCss5 = "btn-default";
+
+
+        }
+        else if (step2 == "step-block-class")
+        {
+            step1 = "step-none-class";
+            step2 = "step-none-class";
+            step3 = "step-block-class";
+            step4 = "step-none-class";
+            step5 = "step-none-class";
+            stepwizard1 = true;
+            stepwizard2 = true;
+            stepwizard3 = false;
+            stepwizard4 = true;
+            stepwizard5 = true;
+            buttonCss1 = "btn-default";
+            buttonCss2 = "btn-default";
+            buttonCss3 = "btn-success";
+            buttonCss4 = "btn-default";
+            buttonCss5 = "btn-default";
+
+        }
+        else if (step3 == "step-block-class")
+        {
+
+            step1 = "step-none-class";
+            step2 = "step-none-class";
+            step3 = "step-none-class";
+            step4 = "step-block-class";
+            step5 = "step-none-class";
+            stepwizard1 = true;
+            stepwizard2 = true;
+            stepwizard3 = true;
+            stepwizard4 = false;
+            stepwizard5 = true;
+            buttonCss1 = "btn-default";
+            buttonCss2 = "btn-default";
+            buttonCss3 = "btn-default";
+            buttonCss4 = "btn-success";
+            buttonCss5 = "btn-default";
+
+        }
+        else if (step4 == "step-block-class")
+        {
+
+            step1 = "step-none-class";
+            step2 = "step-none-class";
+            step3 = "step-none-class";
+            step4 = "step-none-class";
+            step5 = "step-block-class";
+            stepwizard1 = true;
+            stepwizard2 = true;
+            stepwizard3 = true;
+            stepwizard4 = true;
+            stepwizard5 = false;
+            buttonCss1 = "btn-default";
+            buttonCss2 = "btn-default";
+            buttonCss3 = "btn-default";
+            buttonCss4 = "btn-default";
+            buttonCss5 = "btn-success";
+
+        }
+
+    }
+
+    private void ClickPrevious()
+    {
+        if (step2 == "step-block-class")
+        {
+            step1 = "step-block-class";
+            step2 = "step-none-class";
+            step3 = "step-none-class";
+            step4 = "step-none-class";
+            step5 = "step-none-class";
+            stepwizard1 = false;
+            stepwizard2 = true;
+            stepwizard3 = true;
+            stepwizard4 = true;
+            stepwizard5 = true;
+            buttonCss1 = "btn-success";
+            buttonCss2 = "btn-default";
+            buttonCss3 = "btn-default";
+            buttonCss4 = "btn-default";
+            buttonCss5 = "btn-default";
+
+        }
+        else if (step3 == "step-block-class")
+        {
+
+            step1 = "step-none-class";
+            step2 = "step-block-class";
+            step3 = "step-none-class";
+            step4 = "step-none-class";
+            step5 = "step-none-class";
+            stepwizard1 = true;
+            stepwizard2 = false;
+            stepwizard3 = true;
+            stepwizard4 = true;
+            stepwizard5 = true;
+            buttonCss1 = "btn-default";
+            buttonCss2 = "btn-success";
+            buttonCss3 = "btn-default";
+            buttonCss4 = "btn-default";
+            buttonCss5 = "btn-default";
+
+        }
+        else if (step4 == "step-block-class")
+        {
+
+            step1 = "step-none-class";
+            step2 = "step-none-class";
+            step3 = "step-block-class";
+            step4 = "step-none-class";
+            step5 = "step-none-class";
+            stepwizard1 = true;
+            stepwizard2 = true;
+            stepwizard3 = false;
+            stepwizard4 = true;
+            stepwizard5 = true;
+            buttonCss1 = "btn-default";
+            buttonCss2 = "btn-default";
+            buttonCss3 = "btn-success";
+            buttonCss4 = "btn-default";
+            buttonCss5 = "btn-default";
+
+        }
+        else if (step5 == "step-block-class")
+        {
+
+            step1 = "step-none-class";
+            step2 = "step-none-class";
+            step3 = "step-none-class";
+            step4 = "step-block-class";
+            step5 = "step-none-class";
+            stepwizard1 = true;
+            stepwizard2 = true;
+            stepwizard3 = true;
+            stepwizard4 = false;
+            stepwizard5 = true;
+            buttonCss1 = "btn-default";
+            buttonCss2 = "btn-default";
+            buttonCss3 = "btn-default";
+            buttonCss4 = "btn-success";
+            buttonCss5 = "btn-default";
+
+        }
+
+    }
+
+
+    void MultipleFilesReady(IMatFileUploadEntry[] files)
+    {
+        foreach (var file in files)
+        {
+            multiplelist.Add($"Name: {file.Name} - Size: {file.Size}");
+        }
+    }
+
+    public void ClickCarImage(int Id)
+    {
+        foreach (CarImages CarImagesObj in carImageList)
+        {
+            if (CarImagesObj.Id == Id)
+            {
+                CarImagesObj.ActiveImage = "_2GMt3";
+            }
+            else
+            {
+                CarImagesObj.ActiveImage = "";
+
+            }
+        }
+    }
+}

@@ -1,0 +1,3 @@
+﻿namespace ooohCar.Infrastructure.Extensions
+{
+}
